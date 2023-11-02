@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
+    </head>
+        <body> 
+            <h1> This is index template</h1>
+            <h2> 
+                <!-- <a href="/myapp/items/{{item.id}}/"></a> --> 
+                {% for item in items %}
+                <a href="{% url 'myapp:detail' item.id %}">
+                ID: {{item.id}} | {{item.price}} | {{item.description}} <br/>
+                <a>
+                {% endfor %}
+
+            </h2>
+        </body>
+</html>
